@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Raleway', sans-serif; }
+
+a {
+  text-decoration: none; }
+
+main {
+  background-color: #0c122c;
+  position: relative; }
+  main::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: url("/images/bg-desktop.svg") no-repeat center center/cover; }
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1440px;
+  overflow: hidden; }
+
+.content {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px; }
+  .content .data-storage {
+    position: relative;
+    z-index: 1; }
+
+.data-storage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  max-width: 900px; }
+  .data-storage .data-storage-action, .data-storage .storage-management {
+    background: #1d2c67; }
+  .data-storage .data-storage-action {
+    padding: 45px;
+    border-radius: 0.6rem 5rem 0.6rem 0.6rem; }
+  .data-storage .storage-management {
+    position: relative;
+    padding: 35px 40px;
+    border-radius: 0.6rem; }
+  .data-storage .block-1 {
+    flex: 0 0 35%;
+    max-width: 35%; }
+  .data-storage .block-2 {
+    flex: 0 0 60%;
+    max-width: 60%; }
+
+.data-storage-action > .heading {
+  margin-bottom: 15px; }
+
+.data-storage-action > .action {
+  display: flex; }
+
+.data-storage-action > .action > .btn-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  border-radius: 0.6rem;
+  background: #0c122c;
+  width: 45px;
+  height: 45px; }
+  .data-storage-action > .action > .btn-action:not(:last-child) {
+    margin-right: 15px; }
+
+.storage-management .info {
+  font-size: 14px;
+  color: #dddbff;
+  margin-bottom: 15px; }
+
+.storage-management .indicator {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0; }
+  .storage-management .indicator > span {
+    color: #dddbff;
+    font-size: 11px;
+    font-weight: 700; }
+
+.progress-bar .bar {
+  width: 100%;
+  height: 20px;
+  padding: 3px;
+  background-color: #151E49;
+  border-radius: 0.6rem;
+  position: relative; }
+  .progress-bar .bar > .progress {
+    position: relative;
+    width: 80%;
+    height: 100%;
+    border-radius: 0.6rem;
+    background: linear-gradient(90deg, #ffa399 0%, #ff4d97 100%); }
+    .progress-bar .bar > .progress:after {
+      content: '';
+      position: absolute;
+      right: 2px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #FFF;
+      box-shadow: 0 0 5px 1px #fff; }
+
+.progress-bar .bubble {
+  position: absolute;
+  top: -40px;
+  right: 40px;
+  background-color: #FFF;
+  padding: 10px 15px;
+  border-radius: 0.6rem 0.6rem 0 0.6rem; }
+  .progress-bar .bubble::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border: 30px solid transparent;
+    border-top-color: #FFF;
+    border-bottom: 0;
+    border-right: 0;
+    margin-left: -10px;
+    margin-bottom: -20px; }
+  .progress-bar .bubble span {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #848794; }
+  .progress-bar .bubble span > strong {
+    color: #000;
+    font-size: 40px;
+    font-weight: 700;
+    margin-right: 5px; }
+
+.attribution {
+  background: #1d2c67;
+  color: #dddbff;
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+  font-weight: 700; }
+  .attribution a {
+    background: -webkit-linear-gradient(90deg, #ffa399 0%, #ff4d97 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
+
+@media (max-width: 767px) {
+  main::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("/images/bg-mobile.svg") no-repeat center center/cover; }
+  .data-storage .block-1 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 30px; }
+  .data-storage .block-2 {
+    flex: 0 0 100%;
+    max-width: 100%; }
+  .storage-management .info {
+    text-align: center; }
+  .progress-bar .bubble {
+    position: absolute;
+    top: unset;
+    bottom: -35px;
+    right: unset;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 0.6rem; }
+    .progress-bar .bubble::after {
+      content: none; }
+    .progress-bar .bubble span {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #848794; }
+    .progress-bar .bubble span > strong {
+      color: #000;
+      font-size: 40px;
+      font-weight: 700;
+      margin-right: 5px; } }
